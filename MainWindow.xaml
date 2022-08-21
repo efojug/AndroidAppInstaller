@@ -9,15 +9,22 @@
     <Grid>
         <ListBox x:Name="SelectList" Height="380" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="30, 30"/>
         <TextBox x:Name="APKPath" Height="20" Width="300" VerticalContentAlignment="Top" HorizontalAlignment="Left" Margin="30, 0, 0, 380" BorderBrush="Black"></TextBox>
-        <TextBlock Height="16" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,14,0,0" Text="APK路径："></TextBlock>
+        <TextBlock Height="16" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,14,0,0" Text="APK路径:"></TextBlock>
         <Button Height="22" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="335,30,0,0" Content="选择目录" Click="SelectPath" BorderBrush="Blue"></Button>
         <Button Height="22" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="335,60,0,0" Content="加载文件" Click="LoadPathAPK" BorderBrush="Blue"></Button>
         <Button Height="22" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="335,205,0,0" Content="添加" Click="Add"></Button>
         <Button Height="22" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="335,245,0,0" Content="一键添加" Click="AddAll"></Button>
-        <ListBox x:Name="InstallList" Height="380" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="30, 30"></ListBox>
-        <Button Height="22" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,205,335,0" Content="移除" Click="Remove"></Button>
+        <ListBox x:Name="InstallList" Height="380" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="30, 30" />
+            <Button Height="22" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,205,335,0" Content="移除" Click="Remove"></Button>
         <Button Height="22" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,245,335,0" Content="一键移除" Click="RemoveAll"></Button>
         <Button Height="22" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,30,270,0" Content="安装" Click="Install"></Button>
         <Button Height="22" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,30,180,0" Content="一键安装" Click="InstallAll"></Button>
+        <StatusBar Height="22" Width="740" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,440,0,0">
+            <TextBlock Text="当前状态:" Width="60" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.900,0.490"/>
+            <TextBlock x:Name="Stats" Width="60" VerticalAlignment="Center" HorizontalAlignment="Left" Text="等待中..."/>
+            <TextBlock Text="|" Width="440"></TextBlock>
+            <ProgressBar x:Name="Progress" HorizontalAlignment="Right" Height="20" VerticalAlignment="Center" Width="155" Maximum="100" Value="0" Foreground="LimeGreen" />
+        </StatusBar>
+        <pu:Switch x:Name="MultiThread" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="660,0,0,415" Content="多线程模式" Checked="EnableMultiThread" Unchecked="DisableMultiThread" RenderTransformOrigin="0.504,0.927" CheckedBackground="DeepSkyBlue"></pu:Switch>
     </Grid>
 </pu:WindowX>
